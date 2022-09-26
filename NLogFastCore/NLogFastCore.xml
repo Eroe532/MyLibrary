@@ -1,0 +1,587 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NLogFastCore</name>
+    </assembly>
+    <members>
+        <member name="T:NLogFastCore.Builders.DatabaseTargetBuilder">
+            <summary>
+            Класс конструктор DatabaseTarget
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Builders.DatabaseTargetBuilder._connectionString">
+            <summary>
+            Строка подключения
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Builders.DatabaseTargetBuilder._targetName">
+            <summary>
+            Название Таргета
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Builders.DatabaseTargetBuilder._dbProvider">
+            <summary>
+            Провайдер БД
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Builders.DatabaseTargetBuilder._tableName">
+            <summary>
+            Название таблицы
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Builders.DatabaseTargetBuilder._commandValues">
+            <summary>
+            Перечисление значений столбцов в таблице
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Builders.DatabaseTargetBuilder._commandColumns">
+            <summary>
+            Перечисление столбцов в таблице
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Builders.DatabaseTargetBuilder._targetParameters">
+            <summary>
+            Конструктор параметров
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.Builders.DatabaseTargetBuilder.#ctor(System.String,IDbProviderSpecificFunctionality,System.String,System.String)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="targetName">Название Таргета</param>
+            <param name="dbProvider">Провайдер БД</param>
+            <param name="connectionString">Строка подключения</param>
+            <param name="tableName">Название таблицы</param>
+        </member>
+        <member name="M:NLogFastCore.Builders.DatabaseTargetBuilder.AddSimpleParameter(System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32})">
+            <summary>
+            Добавление простого параметра
+            </summary>
+            <param name="parameterName">Название параметра</param>
+            <param name="parameterLayout">Маркер параметра</param>
+            <param name="dbType">Тип параметра</param>
+            <param name="allowDbNull">Возможен ли null</param>
+            <param name="size">Размер</param>
+        </member>
+        <member name="M:NLogFastCore.Builders.DatabaseTargetBuilder.GetTarget">
+            <summary>
+            Генерация Таргета
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:NLogFastCore.Builders.ParameterInfoBuilder">
+            <summary>
+            Конструктор параметров
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Builders.ParameterInfoBuilder._parameterInfos">
+            <summary>
+            Перечисление параметров для таргета
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Builders.ParameterInfoBuilder.CurrentParameterInfo">
+            <summary>
+            Последний параметр
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.Builders.ParameterInfoBuilder.AllowDbNull(System.Boolean)">
+            <summary>
+            Установка Возможен ли null
+            </summary>
+            <param name="allowDbNull">Возможен ли null</param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.Builders.ParameterInfoBuilder.DbType(System.String)">
+            <summary>
+            Установка Типа
+            </summary>
+            <param name="dbType">Тип</param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.Builders.ParameterInfoBuilder.Size(System.Int32)">
+            <summary>
+            Установка размера
+            </summary>
+            <param name="size">Размер</param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.Builders.ParameterInfoBuilder.Name(System.String)">
+            <summary>
+            Установка названия
+            </summary>
+            <param name="name">Название</param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.Builders.ParameterInfoBuilder.Layout(System.String)">
+            <summary>
+            Установка маркера
+            </summary>
+            <param name="layout">Маркер</param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.Builders.ParameterInfoBuilder.GetInstance">
+            <summary>
+            Получение последнего параметра
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.Builders.ParameterInfoBuilder.AddParameter(System.String,System.String)">
+            <summary>
+            Добавление параметра
+            </summary>
+            <param name="parameterName">Название</param>
+            <param name="parameterLayout">Маркер</param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.Builders.ParameterInfoBuilder.GetInstances">
+            <summary>
+            Получение всех параметров
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:NLogFastCore.Builders.ParameterInfoBuilder.TypeDictionary">
+            <summary>
+            Словарь типов
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.Builders.ParameterInfoBuilder.GetCopy``1(``0)">
+            <summary>
+            Копирование
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+            <exception cref="T:System.NullReferenceException"></exception>
+        </member>
+        <member name="T:NLogFastCore.Enums.DbProviderType">
+            <summary>
+            Тип провайдера БД
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Enums.DbProviderType.MicrosoftSQLServer">
+            <summary>
+            MicrosoftSQL
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Enums.DbProviderType.PostgreSQL">
+            <summary>
+            PostgreSQL
+            </summary>
+        </member>
+        <member name="T:NLogFastCore.Enums.LoggerType">
+            <summary>
+            Тип логера
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Enums.LoggerType.ErrorLogger">
+            <summary>
+            Логгер ошибок
+            </summary>
+        </member>
+        <member name="T:NLogFastCore.InternalLoggingConfiguration">
+            <summary>
+            InternalLogging
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.InternalLoggingConfiguration.Setup">
+            <summary>
+            Установка
+            </summary>
+        </member>
+        <member name="T:NLogFastCore.Layouts.ExceptionMethodLayoutRenderer">
+            <summary>
+            Название метода или сигнатура
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Layouts.ExceptionMethodLayoutRenderer.Signature">
+            <summary>
+            Отображать сигнатуру метода
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.Layouts.ExceptionMethodLayoutRenderer.Append(System.Text.StringBuilder,NLog.LogEventInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="T:NLogFastCore.Layouts.ExceptionObjectTypeLayoutRenderer">
+            <summary>
+            Название типа объекта
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Layouts.ExceptionObjectTypeLayoutRenderer.Short">
+            <summary>
+            Короткое название типа
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.Layouts.ExceptionObjectTypeLayoutRenderer.Append(System.Text.StringBuilder,NLog.LogEventInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="T:NLogFastCore.Layouts.LayoutsRegistration">
+            <summary>
+            Регистратор маркеров
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Layouts.LayoutsRegistration.LayoutsRegistered">
+            <summary>
+            Выполнено или нет
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.Layouts.LayoutsRegistration.RegisterLayouts">
+            <summary>
+            Регистрация
+            </summary>
+        </member>
+        <member name="T:NLogFastCore.Layouts.RequestParametersLayoutRenderer">
+            <summary>
+            Название типа объекта
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Layouts.RequestParametersLayoutRenderer.Short">
+            <summary>
+            Короткое название типа
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.Layouts.RequestParametersLayoutRenderer.DoAppend(System.Text.StringBuilder,NLog.LogEventInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="T:NLogFastCore.LogConf.BaseLoggingConfiguration">
+            <summary>
+            Базовая лог конфигурация
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.LogConf.BaseLoggingConfiguration.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.LogConf.BaseLoggingConfiguration._minLogLevel">
+            <summary>
+            Минимальный уровень логгирования
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.LogConf.BaseLoggingConfiguration._maxLogLevel">
+            <summary>
+            Максимальный уровень логгирования
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.LogConf.BaseLoggingConfiguration.GetTargets(System.String,IDbProviderSpecificFunctionality)">
+            <summary>
+            Получение таргетов
+            </summary>
+            <param name="connectionString">Строка подключения</param>
+            <param name="dbProviderSpecificFunctionality">Пройвайдер БД</param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.LogConf.BaseLoggingConfiguration.SetLoggingRules(NLog.Config.LoggingConfiguration,System.Collections.Generic.IEnumerable{NLog.Targets.Target})">
+            <summary>
+            Установка пров доступа
+            </summary>
+            <param name="loggingConfiguration">Конфигурация</param>
+            <param name="targets">Таргкты</param>
+        </member>
+        <member name="M:NLogFastCore.LogConf.BaseLoggingConfiguration.Setup(NLog.Config.ISetupBuilder,System.String,IDbProviderSpecificFunctionality)">
+            <summary>
+            Выполнение настроек логирования
+            </summary>
+            <param name="setupBuilder"></param>
+            <param name="connectionString"> Строка подключения к базе данных </param>
+            <param name="dbProviderSpecificFunctionality"> Тип провайдера работы с базой данных </param>
+        </member>
+        <member name="M:NLogFastCore.LogConf.BaseLoggingConfiguration.Setup(NLog.Config.ISetupBuilder,System.String,NLogFastCore.Enums.DbProviderType)">
+            <inheritdoc/>
+        </member>
+        <member name="M:NLogFastCore.LogConf.BaseLoggingConfiguration.SetLogLevel(NLog.LogLevel,NLog.LogLevel)">
+            <inheritdoc/>
+        </member>
+        <member name="T:NLogFastCore.LogConf.ErrorLoggingConfiguration">
+            <summary>
+            Логгер ошибок
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.LogConf.ErrorLoggingConfiguration._tableName">
+            <summary>
+            Название таблицы
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.LogConf.ErrorLoggingConfiguration.#ctor(System.String)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="tableName">Название таблицы</param>
+        </member>
+        <member name="M:NLogFastCore.LogConf.ErrorLoggingConfiguration.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.LogConf.ErrorLoggingConfiguration.GetTargets(System.String,IDbProviderSpecificFunctionality)">
+            <inheritdoc/>
+        </member>
+        <member name="M:NLogFastCore.LogConf.ErrorLoggingConfiguration.SetLoggingRules(NLog.Config.LoggingConfiguration,System.Collections.Generic.IEnumerable{NLog.Targets.Target})">
+            <inheritdoc/>
+        </member>
+        <member name="T:NLogFastCore.LogConf.ILoggingConfiguration">
+            <summary>
+            Интерфейс конфигурации логгера
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.LogConf.ILoggingConfiguration.Setup(NLog.Config.ISetupBuilder,System.String,NLogFastCore.Enums.DbProviderType)">
+            <summary>
+            Выполнение настроек логирования
+            </summary>
+            <param name="setupBuilder"></param>
+            <param name="connectionString"> Строка подключения к базе данных </param>
+            <param name="dbProviderType"> Тип провайдера работы с базой данных </param>
+        </member>
+        <member name="M:NLogFastCore.LogConf.ILoggingConfiguration.SetLogLevel(NLog.LogLevel,NLog.LogLevel)">
+            <summary>
+            Установка уровней логупрования
+            </summary>
+            <param name="minLogLevel">Минимальный</param>
+            <param name="maxLogLevel">Максимальный</param>
+        </member>
+        <member name="T:NLogFastCore.LogConf.LoggingConfigurationExtansion">
+            <summary>
+            Расширения
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.LogConf.LoggingConfigurationExtansion.Setup(NLog.Config.ISetupBuilder,NLogFastCore.LogConf.ILoggingConfiguration,System.String,NLogFastCore.Enums.DbProviderType)">
+            <summary>
+            Выполнение настроек логирования
+            </summary>
+            <param name="setupBuilder"></param>
+            <param name="loggingConfiguration">Конфигурация логера</param>
+            <param name="connectionString"> Строка подключения к базе данных </param>
+            <param name="dbProviderType"> Тип провайдера работы с базой данных </param>
+        </member>
+        <member name="T:NLogFastCore.LoggerRegistrar">
+            <summary>
+            Регистротор логгера
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.LoggerRegistrar._dbProviderType">
+            <summary>
+            Провайдер БД
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.LoggerRegistrar._setupInternalLogging">
+            <summary>
+            InternalLogging
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.LoggerRegistrar.ConnectionString">
+            <summary>
+            Строка подключения
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.Add(NLogFastCore.Enums.LoggerType,NLog.LogLevel,NLog.LogLevel)">
+            <summary>
+            Добавить логгер для регистрации из списка доступных
+            </summary>
+            <param name="loggerType"> Тип добавляемого логгера </param>
+            <param name="minLogLevel">Минимальный уровень логгирования
+            по умолчанию warn</param>
+            <param name="maxLogLevel">Максимум уровень логгирования
+            по умолчанию fatal</param>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.AddDbLogger(NLogFastCore.Enums.LoggerType,System.String,NLog.LogLevel,NLog.LogLevel)">
+            <summary>
+            Добавить логгер для регистрации из списка доступных
+            </summary>
+            <param name="loggerType"> Тип добавляемого логгера </param>
+            <param name="minLogLevel">Минимальный уровень логгирования
+            по умолчанию warn</param>
+            <param name="maxLogLevel">Максимум уровень логгирования
+            по умолчанию fatal</param>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.Add(NLogFastCore.LogConf.ILoggingConfiguration[])">
+            <summary>
+            Добавить логгер
+            </summary>
+            <param name="loggingConfigurations"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.AddInternal">
+            <summary>
+            Установка Internal
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.SetConnectionString(System.String)">
+            <summary>
+            Установить строку подключения для настройки логгеров
+            </summary>
+            <param name="connectionString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.SetConnectionStringByName(System.String)">
+            <summary>
+            Установить строку подключения для настройки логгеров по названию
+            </summary>
+            <param name="connectionString"> Название строки подключения </param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.SetDbProvider(NLogFastCore.Enums.DbProviderType)">
+            <summary>
+            Установить провайдер баз данных для настройки логгеров
+            </summary>
+            <param name="dbProviderType"> Тип провайдера баз данныых </param>
+            <returns></returns>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.Setup">
+            <summary>
+            Настроить добавленные логгеры
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.Check(System.String,System.String,System.Object[])">
+            <summary>
+            Проверить строку на пустоту
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.GetLoggingConfiguration(NLogFastCore.Enums.LoggerType)">
+            <summary>
+            Получения логера по типу
+            </summary>
+            <param name="loggerType"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:NLogFastCore.LoggerRegistrar.GetDBLoggingConfiguration(NLogFastCore.Enums.LoggerType,System.String)">
+            <summary>
+            Получения логера по типу
+            </summary>
+            <param name="loggerType"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="P:NLogFastCore.Provider.MicrosoftSQLServerProvider.StringDbType">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.MicrosoftSQLServerProvider.DateTimeDbType">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.MicrosoftSQLServerProvider.GuidDbType">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.MicrosoftSQLServerProvider.IntDbType">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.MicrosoftSQLServerProvider.LongDbType">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.MicrosoftSQLServerProvider.StringToken">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Provider.MicrosoftSQLServerProvider.space">
+            <summary>
+            Пробел
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.Provider.MicrosoftSQLServerProvider.GetInsertCommand(System.String,System.String[],System.String[])">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.NpgsqlProvider.StringDbType">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.NpgsqlProvider.DateTimeDbType">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.NpgsqlProvider.GuidDbType">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.NpgsqlProvider.IntDbType">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.NpgsqlProvider.LongDbType">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:NLogFastCore.Provider.NpgsqlProvider.StringToken">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="F:NLogFastCore.Provider.NpgsqlProvider.space">
+            <summary>
+            Пробел
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.Provider.NpgsqlProvider.GetInsertCommand(System.String,System.String[],System.String[])">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:NLogFastCore.Provider.NpgsqlProvider.GetQuoted(System.String)">
+            <summary>
+            Обертка слова в ковычки
+            </summary>
+            <param name="input">слово</param>
+            <returns></returns>
+        </member>
+        <member name="T:IDbProviderSpecificFunctionality">
+            <summary>
+            Провайдер базы данных
+            </summary>
+        </member>
+        <member name="P:IDbProviderSpecificFunctionality.StringDbType">
+            <summary>
+            Тип String
+            </summary>
+        </member>
+        <member name="P:IDbProviderSpecificFunctionality.DateTimeDbType">
+            <summary>
+            Тип DateTime
+            </summary>
+        </member>
+        <member name="P:IDbProviderSpecificFunctionality.GuidDbType">
+            <summary>
+            Тип Guid
+            </summary>
+        </member>
+        <member name="P:IDbProviderSpecificFunctionality.IntDbType">
+            <summary>
+            Тип Int
+            </summary>
+        </member>
+        <member name="P:IDbProviderSpecificFunctionality.LongDbType">
+            <summary>
+            Тип Long
+            </summary>
+        </member>
+        <member name="P:IDbProviderSpecificFunctionality.StringToken">
+            <summary>
+            Название провайдера
+            </summary>
+        </member>
+        <member name="M:IDbProviderSpecificFunctionality.GetInsertCommand(System.String,System.String[],System.String[])">
+            <summary>
+            Получить запрос к бд
+            </summary>
+            <param name="tableName">Название таблици</param>
+            <param name="values">Значения</param>
+            <param name="columns">Столбцы</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
