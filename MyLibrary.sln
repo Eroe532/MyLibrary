@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DictionaryManagment", "MyLibrary\DictionaryManagment.csproj", "{9DF239AE-2BBA-4CB5-BD06-21B6DE81EB5A}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NLogFastCore", "NLogFastCore\NLogFastCore.csproj", "{981529BB-99FA-4090-B3CE-12F7B88929EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskSchedulerCore", "TaskSchedulerCore\TaskSchedulerCore.csproj", "{76373AB8-A6F9-4B2D-A40C-7F561FBBEE3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskSchedulerCore", "TaskSchedulerCore\TaskSchedulerCore.csproj", "{76373AB8-A6F9-4B2D-A40C-7F561FBBEE3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventStoreDBLibrary", "EventStoreDBLibrary\EventStoreDBLibrary.csproj", "{DEAAA95B-E4D4-4443-BA24-0E976E32564E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventStoreDBLibrary", "EventStoreDBLibrary\EventStoreDBLibrary.csproj", "{DEAAA95B-E4D4-4443-BA24-0E976E32564E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryManagment", "DictionaryManagment\DictionaryManagment.csproj", "{CFC21205-D891-41A0-8B59-59C73F42E4DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9DF239AE-2BBA-4CB5-BD06-21B6DE81EB5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9DF239AE-2BBA-4CB5-BD06-21B6DE81EB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9DF239AE-2BBA-4CB5-BD06-21B6DE81EB5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9DF239AE-2BBA-4CB5-BD06-21B6DE81EB5A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{981529BB-99FA-4090-B3CE-12F7B88929EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{981529BB-99FA-4090-B3CE-12F7B88929EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{981529BB-99FA-4090-B3CE-12F7B88929EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{DEAAA95B-E4D4-4443-BA24-0E976E32564E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEAAA95B-E4D4-4443-BA24-0E976E32564E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEAAA95B-E4D4-4443-BA24-0E976E32564E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFC21205-D891-41A0-8B59-59C73F42E4DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFC21205-D891-41A0-8B59-59C73F42E4DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFC21205-D891-41A0-8B59-59C73F42E4DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFC21205-D891-41A0-8B59-59C73F42E4DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

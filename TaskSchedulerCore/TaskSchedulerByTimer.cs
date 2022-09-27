@@ -13,7 +13,7 @@
         /// <summary>
         /// Список таймеров
         /// </summary>
-        private List<Timer> _timers = new();
+        private readonly List<Timer> _timers = new();
 
         /// <summary>
         /// Конструктор
