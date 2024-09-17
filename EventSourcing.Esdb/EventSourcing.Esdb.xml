@@ -1,0 +1,478 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EventSourcing.Esdb</name>
+    </assembly>
+    <members>
+        <member name="T:EventSourcing.Events.EventJson">
+            <summary>
+            Событие в Json
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Events.EventJson.EventId">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSourcing.Events.EventJson.Data">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSourcing.Events.EventJson.Metadata">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSourcing.Events.EventJson.Position">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSourcing.Events.EventJson.CreatedTime">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSourcing.Events.EventJson.EventType">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSourcing.Events.EventJson.#ctor(EventStore.Client.ResolvedEvent)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="resolvedEvent"></param>
+        </member>
+        <member name="M:EventSourcing.Events.EventJson.op_Implicit(EventStore.Client.ResolvedEvent)~EventSourcing.Events.EventJson">
+            <summary>
+            Преобразование
+            </summary>
+            <param name="resolvedEvent"></param>
+        </member>
+        <member name="T:EventSourcing.Esdb.Extensions.EsdbExtension">
+            <summary>
+            Расширения конвертации
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Extensions.EsdbExtension.EventData``1(EventSourcing.Events.IEvent{``0})">
+            <summary>
+            Преобразование класса к классу T
+            </summary>
+            <typeparam name="TMetadata"></typeparam>
+            <param name="event"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Extensions.EsdbExtension.Convert(EventSourcing.Reader.ESDirection)">
+            <summary>
+            Конвертация
+            </summary>
+            <param name="direction">Режимов чтения</param>
+            <returns></returns>
+            <exception cref="T:System.NotSupportedException"></exception>
+        </member>
+        <member name="M:EventSourcing.Esdb.Extensions.EsdbExtension.Convert(EventStore.Client.ResolvedEvent)">
+            <summary>
+            Конвертация
+            </summary>
+            <param name="resolvedEvent">Прочитанное событие из EventStore</param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSourcing.Esdb.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Расширение
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Extensions.ServiceCollectionExtensions.AddHostedSubscriber``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
+            <summary>
+            Регистрация подписчика
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Extensions.ServiceCollectionExtensions.AddEventStoreDB``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.Action{EventStore.Client.EventStoreClientSettings},Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Регистрация Фабрики и
+            </summary>
+            <typeparam name="TMetadata"></typeparam>
+            <typeparam name="TStreamInfo"></typeparam>
+            <param name="serviceCollection">ServiceCollection</param>
+            <param name="connectionString">Строка подключения</param>
+            <param name="configureSettings"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSourcing.Esdb.Extensions.StreamInfo">
+            <summary>
+            Информация о потоках
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Extensions.StreamInfo.Streams">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSourcing.Esdb.Extensions.StreamInfo.#ctor">
+            <summary>
+            Информация о потоках
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Extensions.StreamInfo.GetStreamName(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSourcing.Esdb.Extensions.StreamInfo.GetProjectionName(System.Int32,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSourcing.Esdb.Extensions.StreamInfo.AddStream(System.Int32,System.String)">
+            <summary>
+            Добавить поток 
+            </summary>
+            <param name="id">Идентификатор</param>
+            <param name="name">Название</param>
+        </member>
+        <member name="T:EventSourcing.Esdb.EsdbFactory`1">
+            <summary>
+            Фабрика Репозиториев EventStoreDB
+            </summary>
+            <typeparam name="TMetadata"></typeparam>
+        </member>
+        <member name="P:EventSourcing.Esdb.EsdbFactory`1.StreamInfo">
+            <inheritdoc/>
+        </member>
+        <member name="F:EventSourcing.Esdb.EsdbFactory`1._client">
+            <summary>
+            Клиент EventStoreDB
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.EsdbFactory`1.EventConverter">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSourcing.Esdb.EsdbFactory`1.#ctor(EventSourcing.DependencyInjection.IStreamInfo,EventStore.Client.EventStoreClient,EventSourcing.Converter.IEventConverter{`0})">
+            <summary>
+            Фабрика Репозиториев EventStoreDB
+            </summary>
+            <param name="streamInfo">Информация о потоках</param>
+            <param name="client">Клиент EventStoreDB</param>
+            <param name="eventConverter">Класс для преобразования в ивенты</param>
+        </member>
+        <member name="M:EventSourcing.Esdb.EsdbFactory`1.GetProducer(System.Int32)">
+            <summary>
+            Получение продюсера
+            </summary>
+            <param name="streamId">Идентификатор потока</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.EsdbFactory`1.GetReader(System.Int32)">
+            <summary>
+            Получение ридера
+            </summary>
+            <param name="streamId">Идентификатор потока</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.EsdbFactory`1.GetProjectionReader(System.Int32,System.String)">
+            <summary>
+            Получение ридера для проекций
+            </summary>
+            <param name="streamId">Идентификатор потока</param>
+            <param name="projectionPart">Идентификатор проекции</param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSourcing.Esdb.Producer.EsdbProducer`1">
+            <summary>
+            Класс для записи в EventStoreDB
+            </summary>
+        </member>
+        <member name="F:EventSourcing.Esdb.Producer.EsdbProducer`1._streamName">
+            <summary>
+            Имя потока
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Producer.EsdbProducer`1.#ctor(EventStore.Client.EventStoreClient,System.String)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="client">Клиент Esdb</param>
+            <param name="streamName">Имя потока</param>
+        </member>
+        <member name="M:EventSourcing.Esdb.Producer.EsdbProducer`1.Save(System.Threading.CancellationToken)">
+            <summary>
+            Сохранение изменений
+            </summary>
+            <param name="cancellationToken">Токен отмены</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Producer.EsdbProducer`1.Append(EventStore.Client.EventStoreClient,System.String,System.Collections.Generic.IEnumerable{EventStore.Client.EventData},EventStore.Client.StreamState,System.Threading.CancellationToken)">
+            <summary>
+            запись в EventStoreDB
+            </summary>
+            <param name="client">Клиент EventStoreDB</param>
+            <param name="StreamName">Имя потока</param>
+            <param name="evnt">Список событий</param>
+            <param name="streamState">Ожидаемое состояние потока</param>
+            <param name="cancellationToken">Токен отмены</param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSourcing.Esdb.Projections.EsdbConfModel">
+            <summary>
+            Класс конфигураций для соотношения его с json файлом
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Projections.EsdbConfModel.Id">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Projections.EsdbConfModel.IsChange">
+            <summary>
+            Были ли изменения (true изменения применятся и выставится false)
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Projections.EsdbConfModel.ChangeDate">
+            <summary>
+            Дата применения
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Projections.EsdbConfModel.ListProjection">
+            <summary>
+            Список проекций
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Projections.EsdbConfModel.ListStream">
+            <summary>
+            Список потоков
+            </summary>
+        </member>
+        <member name="T:EventSourcing.Esdb.Projections.EsdbProjectionModel">
+            <summary>
+            Класс проекции
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Projections.EsdbProjectionModel.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Projections.EsdbProjectionModel.Id">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Projections.EsdbProjectionModel.NameProjection">
+            <summary>
+            Название проекции
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Projections.EsdbProjectionModel.JsBodyProjection">
+            <summary>
+            Код проекции
+            </summary>
+        </member>
+        <member name="T:EventSourcing.Esdb.Projections.EsdbStreamModel">
+            <summary>
+            Модель описания потоков Esdb
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Projections.EsdbStreamModel.Id">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:EventSourcing.Esdb.Projections.EsdbStreamModel.Title">
+            <summary>
+            Название
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Projections.EsdbStreamModel.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="T:EventSourcing.Esdb.Projections.ProjectionManagement">
+            <summary>
+            Класс для управления проекциями
+            </summary>
+        </member>
+        <member name="F:EventSourcing.Esdb.Projections.ProjectionManagement._managementClient">
+            <summary>
+            Клиент управления проекциями EventStoreDB
+            </summary>
+        </member>
+        <member name="F:EventSourcing.Esdb.Projections.ProjectionManagement._client">
+            <summary>
+            Клиент EventStoreDB
+            </summary>
+        </member>
+        <member name="F:EventSourcing.Esdb.Projections.ProjectionManagement._logger">
+            <summary>
+            Логгер
+            </summary>
+        </member>
+        <member name="F:EventSourcing.Esdb.Projections.ProjectionManagement.eventStoreConf">
+            <summary>
+            Конфигурации лучше загружать из json или других типов файлов
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Projections.ProjectionManagement.#ctor(System.String,EventStore.Client.EventStoreClient,EventSourcing.Esdb.Projections.EsdbConfModel,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="eventConnectionString">Строка подключения </param>
+            <param name="client">Клиент EventStoreDB</param>
+            <param name="eventStoreConf">Конфигурации лучше загружать из json или других типов файлов</param>
+            <param name="logger">Логгер</param>
+        </member>
+        <member name="M:EventSourcing.Esdb.Projections.ProjectionManagement.CheckProjectionAsync(System.String,System.String,System.Boolean)">
+            <summary>
+            Проверка наличия проекции или обновление его
+            </summary>
+            <param name="NameProjection">Имя проекции</param>
+            <param name="jsBodyProjection">Код проекции</param>
+            <param name="isChange">Требуется ли обновить его или нет</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Projections.ProjectionManagement.CheckAllProjectionAsync(System.Collections.Generic.List{EventSourcing.Esdb.Projections.EsdbProjectionModel},System.Boolean)">
+            <summary>
+            Проверка существования всех проекций или обновление их  
+            </summary>
+            <param name="listProjection">Список проекций</param>
+            <param name="isChange">Требуется ли обновить их</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Projections.ProjectionManagement.GetStatusAsync(System.String)">
+            <summary>
+            Получение состояния проекции
+            </summary>
+            <param name="NameProjection">Имя проекции</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Projections.ProjectionManagement.StartProjectionAsync(System.String)">
+            <summary>
+            Запуск проекции
+            </summary>
+            <param name="NameProjection">Имя проекции</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Projections.ProjectionManagement.CheckStreamAsync(EventSourcing.Esdb.Projections.EsdbStreamModel)">
+            <summary>
+            Проверка наличия потока и создание в случае отсутствия
+            </summary>
+            <param name="stream">имя потока</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Projections.ProjectionManagement.CheckStreamAsync(System.Collections.Generic.IEnumerable{EventSourcing.Esdb.Projections.EsdbStreamModel})">
+            <summary>
+            Проверка наличия потоков и создание в случае отсутствия
+            </summary>
+            <param name="listStream">Список имен потоков</param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSourcing.Esdb.Reader.EsdbReader`1">
+            <summary>
+            Класс для чтения из EventStoreDB
+            </summary>
+        </member>
+        <member name="F:EventSourcing.Esdb.Reader.EsdbReader`1._client">
+            <summary>
+            Клиент EventStoreDB
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Reader.EsdbReader`1.#ctor(EventStore.Client.EventStoreClient,System.String,EventSourcing.Converter.IEventConverter{`0})">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="client">Клиент EventStoreDB</param>
+            <param name="streamName">Имя потока</param>
+            <param name="eventConverter">Класс для преобразования в ивенты</param>
+        </member>
+        <member name="M:EventSourcing.Esdb.Reader.EsdbReader`1.ReadEventJsonByStreamAsync(System.String,EventSourcing.Reader.ESDirection,System.Nullable{System.UInt64},System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSourcing.Esdb.Reader.EsdbReader`1.ReadEventJsonByStreamAsync(EventStore.Client.EventStoreClient,System.String,EventSourcing.Reader.ESDirection,System.Nullable{System.UInt64},System.Threading.CancellationToken)">
+            <summary>
+            Чтение из потока
+            </summary>
+            <param name="client">Клиент EventStoreDB</param>
+            <param name="streamName">Имя потока</param>
+            <param name="direction">Направление чтения</param>
+            <param name="position">Позиция с которой начинать чтение</param>
+            <param name="cancellationToken">Токен отмены</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Reader.EsdbReader`1.GetLastEventPositionAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSourcing.Esdb.Reader.EsdbReader`1.GetLastEventPositionAsync(EventStore.Client.EventStoreClient,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Метод получение позиции последнего события конкретного потока
+            </summary>
+            <param name="client">Клиент EventStoreDB</param>
+            <param name="streamName">Имя потока</param>
+            <param name="cancellationToken">Токен отмены</param>
+            <returns>Позиция</returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Reader.EsdbReader`1.CheckStreamAsync">
+            <summary>
+            Проверка на наличие потока
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:EventSourcing.Esdb.Subscriber.EsdbSubscriber`1">
+            <summary>
+            Класс для слушателя(подписчика на поток) в EventStoreDB Который записывает в бд информацию
+            </summary>
+        </member>
+        <member name="F:EventSourcing.Esdb.Subscriber.EsdbSubscriber`1._client">
+            <summary>
+            Клиент EventStoreDB
+            </summary>
+        </member>
+        <member name="F:EventSourcing.Esdb.Subscriber.EsdbSubscriber`1._subscription">
+            <summary>
+            подписчик
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Subscriber.EsdbSubscriber`1.#ctor(EventStore.Client.EventStoreClient,EventSourcing.DependencyInjection.IEventSourcingFactory{`0},Microsoft.Extensions.Logging.ILogger,System.Int32,System.Int32)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="client">Клиент EventStoreDB</param>
+            <param name="factory">Фабрика Репозиториев Event Sourcing</param>
+            <param name="logger">Логгер</param>
+            <param name="streamId">Идентификатор потока</param>
+            <param name="numbAttempts">Количество попыток переподписок на поток (-1 - не ограниченное кол-во переподписок)</param>
+        </member>
+        <member name="M:EventSourcing.Esdb.Subscriber.EsdbSubscriber`1.GetLastPosition(System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSourcing.Esdb.Subscriber.EsdbSubscriber`1.SubscribeToStreamAsync(System.UInt64,System.Threading.CancellationToken)">
+            <summary>
+            метод подписки на получение Событий из EventStoreDB (по 1 потоку)
+            </summary>
+            <param name="position">позиция в потоке с которой начинаем смотреть (0ul - начало ulong.maxValue - конец)</param>
+            <param name="cancellationToken">Токен отмены</param>
+        </member>
+        <member name="M:EventSourcing.Esdb.Subscriber.EsdbSubscriber`1.ReadEventByStream(System.UInt64,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:EventSourcing.Esdb.Subscriber.EsdbSubscriberHostedService`1">
+            <summary>
+            Класс для слушателя(подписчика на поток) в EventStoreDB Который записывает в бд информацию
+            </summary>
+        </member>
+        <member name="M:EventSourcing.Esdb.Subscriber.EsdbSubscriberHostedService`1.#ctor(EventStore.Client.EventStoreClient,EventSourcing.DependencyInjection.IEventSourcingFactory{`0},Microsoft.Extensions.Logging.ILogger,System.Int32,System.Int32)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="client">Клиент EventStoreDB</param>
+            <param name="factory">Фабрика Репозиториев Event Sourcing</param>
+            <param name="logger">Логгер</param>
+            <param name="streamId">Идентификатор потока</param>
+            <param name="numbAttempts">Количество попыток переподписок на поток (-1 - не ограниченное кол-во переподписок)</param>
+        </member>
+        <member name="M:EventSourcing.Esdb.Subscriber.EsdbSubscriberHostedService`1.StartAsync(System.Threading.CancellationToken)">
+            <summary>
+            Запуск
+            </summary>
+            <param name="stoppingToken">Токен отмены</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Subscriber.EsdbSubscriberHostedService`1.StopAsync(System.Threading.CancellationToken)">
+            <summary>
+            Остановка
+            </summary>
+            <param name="stoppingToken">Токен отмены</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSourcing.Esdb.Subscriber.EsdbSubscriberHostedService`1.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSourcing.Esdb.Subscriber.EsdbSubscriberHostedService`1.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

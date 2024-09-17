@@ -1,21 +1,26 @@
-﻿namespace DictionaryManagment.Model
+﻿namespace DictionaryManagment.Model;
+
+/// <summary>
+/// Интерфейс для модели с полем ключа
+/// </summary>
+/// <typeparam name="TKey">Тип ключа</typeparam>
+public class DictionaryModel<TKey> : IDictionaryModel<TKey> where TKey : struct
 {
     /// <summary>
-    /// Интерфей для модели с полем ключа
+    /// Ключ
     /// </summary>
-    /// <typeparam name="U">Тип ключа</typeparam>
-    public class DictionaryModel<U> : IDictionaryModel<U> where U : struct
-    {
-        /// <summary>
-        /// Ключ
-        /// </summary>
-        public U Id { get; set; }
+    public TKey Id { get; set; }
 
-        /// <summary>
-        /// Ключ
-        /// </summary>
-        public string Title { get; set; } = "";
+    /// <summary>
+    /// Название
+    /// </summary>
+    public string Title { get; set; }
+
+    /// <summary>
+    /// Интерфейс для модели с полем ключа
+    /// </summary>
+    public DictionaryModel()
+    {
+        Title = string.Empty;
     }
 }
-
-

@@ -1,8 +1,4 @@
-﻿
-
-
-
-namespace NLogFastCore.Enums
+﻿namespace NLogFastCore.Enums
 {
     /// <summary>
     /// Тип провайдера БД

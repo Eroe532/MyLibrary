@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FileStorage.DAL</name>
+    </assembly>
+    <members>
+        <member name="T:FileStorage.DAL.AddFileStorageContext">
+            <summary>
+            Контекст БД
+            </summary>
+        </member>
+        <member name="M:FileStorage.DAL.AddFileStorageContext.AddFileInfoModelConfigure(Microsoft.EntityFrameworkCore.ModelBuilder,System.String,System.String)">
+            <summary>
+            Настройки для модели
+            </summary>
+            <param name="modelBuilder"></param>
+            <param name="name">Название</param>
+            <param name="schema">Схема</param>
+        </member>
+        <member name="M:FileStorage.DAL.AddFileStorageContext.FileInfoModelConfigure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{FileStorage.DAL.Model.FileInfoModel},System.String,System.String)">
+            <summary>
+            Настройки для модели
+            </summary>
+            <param name="builder"></param>
+            <param name="name">Название</param>
+            <param name="schema">Схема</param>
+        </member>
+        <member name="M:FileStorage.DAL.AddFileStorageContext.AddFileModelConfigure(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Настройки для модели
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="M:FileStorage.DAL.AddFileStorageContext.FileModelConfigure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{FileStorage.DAL.Model.FileModel})">
+            <summary>
+            Настройки для модели
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:FileStorage.DAL.FileRepository`1">
+            <summary>
+            Репозиторий для взаимодействия с таблицей файлы
+            </summary>
+        </member>
+        <member name="M:FileStorage.DAL.FileRepository`1.#ctor(`0,AutoMapper.IMapper)">
+            <summary>
+            Констуктор
+            </summary>
+            <param name="context">Контекст БД</param>
+            <param name="mapper">Mapper</param>
+        </member>
+        <member name="M:FileStorage.DAL.FileRepository`1.GetFile(System.Int32,System.Int32)">
+            <summary>
+            Получить Файл
+            </summary>
+            <param name="hash">Хэш</param>
+            <param name="size">Размер</param>
+            <returns></returns>
+        </member>
+        <member name="T:FileStorage.DAL.FileStorageContext">
+            <summary>
+            Контекст БД
+            </summary>
+        </member>
+        <member name="M:FileStorage.DAL.FileStorageContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{FileStorage.DAL.FileStorageContext})">
+            <summary>
+            Контекст БД
+            </summary>
+            <param name="options">Опции</param>
+        </member>
+        <member name="M:FileStorage.DAL.FileStorageContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            При создании моделей
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="T:FileStorage.DAL.Hasher">
+            <summary>
+            Методы расширения для Хеширования
+            </summary>
+        </member>
+        <member name="M:FileStorage.DAL.Hasher.Hash(System.Byte[])">
+            <summary>
+            Хеш для System.Array
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileStorage.DAL.Hasher.Hash(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            Хеш для IEnumerable
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FileStorage.DAL.Migrations.FirstMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:FileStorage.DAL.Migrations.FirstMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FileStorage.DAL.Migrations.FirstMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:FileStorage.DAL.Migrations.FirstMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:FileStorage.DAL.Model.FileInfoModel">
+            <summary>
+            Модель таблицы файлы
+            </summary>
+        </member>
+        <member name="P:FileStorage.DAL.Model.FileInfoModel.Id">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:FileStorage.DAL.Model.FileInfoModel.FileName">
+            <summary>
+            Название (*.*)
+            </summary>
+        </member>
+        <member name="P:FileStorage.DAL.Model.FileInfoModel.DigitalBytesId">
+            <summary>
+            Файл
+            </summary>
+        </member>
+        <member name="M:FileStorage.DAL.Model.FileInfoModel.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="T:FileStorage.DAL.Model.FileModel">
+            <summary>
+            Модель таблицы файлы
+            </summary>
+        </member>
+        <member name="P:FileStorage.DAL.Model.FileModel.Id">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:FileStorage.DAL.Model.FileModel.Hash">
+            <summary>
+            Хэш
+            </summary>
+        </member>
+        <member name="P:FileStorage.DAL.Model.FileModel.Size">
+            <summary>
+            Размен массива
+            </summary>
+        </member>
+        <member name="P:FileStorage.DAL.Model.FileModel.DigitalBytes">
+            <summary>
+            Файл
+            </summary>
+        </member>
+        <member name="M:FileStorage.DAL.Model.FileModel.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:FileStorage.DAL.Model.FileModel.#ctor(System.Byte[])">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="digitalBytes">Массив битов</param>
+        </member>
+    </members>
+</doc>

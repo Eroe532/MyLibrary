@@ -8,7 +8,7 @@ namespace NLogFastCore.Layouts
     /// <summary>
     /// Название типа объекта
     /// </summary>
-    [LayoutRenderer("Exception-object-type-name")]
+    [LayoutRenderer("Exception-Object-Type")]
     internal class ExceptionObjectTypeLayoutRenderer : LayoutRenderer
     {
         /// <summary>

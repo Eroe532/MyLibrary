@@ -1,0 +1,644 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EventSoursing</name>
+    </assembly>
+    <members>
+        <member name="T:EventSoursing.DictionaryType">
+            <summary>
+            Класс для формирования словаря типов
+            </summary>
+        </member>
+        <member name="M:EventSoursing.DictionaryType.GetTypes(System.String[],System.Type[])">
+            <summary>
+            Создание словаря типов по заддынным пространствам имен и всех возможных тиипов
+            рекомедую использовать Assembly.GetAssembly(MethodBase.GetCurrentMethod().DeclaringType).GetTypes() для получения всех тиипов в проекте
+            </summary>
+            <param name="namespaces">пространста имен</param>
+            <param name="types">Все возможные типы 
+            рекомедую использовать Assembly.GetAssembly(MethodBase.GetCurrentMethod().DeclaringType).GetTypes() для получения всех тиипов в проекте</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.DictionaryType.GetTypes(System.String,System.Type[])">
+            <summary>
+            Создание словаря типов по заддынному пространству имен и всех возможных тиипов
+            рекомедую использовать Assembly.GetAssembly(MethodBase.GetCurrentMethod().DeclaringType).GetTypes() для получения всех тиипов в проекте
+            </summary>
+            <param name="namespace">пространсто имен</param>
+            <param name="types">Все возможные типы 
+            рекомедую использовать Assembly.GetAssembly(MethodBase.GetCurrentMethod().DeclaringType).GetTypes() для получения всех тиипов в проекте</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.DictionaryType.GetTypes(System.Type[])">
+            <summary>
+            Создание словаря типов из списка тиипов
+            рекомедую использовать Assembly.GetAssembly(MethodBase.GetCurrentMethod().DeclaringType).GetTypes() для получения всех тиипов в проекте
+            </summary>
+            <param name="types">список типов 
+            рекомедую использовать Assembly.GetAssembly(MethodBase.GetCurrentMethod().DeclaringType).GetTypes() для получения всех тиипов в проекте</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.DictionaryType.GetEventsName(System.String,System.Type[])">
+            <summary>
+            Создание словаря типов из списка тиипов
+            рекомедую использовать Assembly.GetAssembly(MethodBase.GetCurrentMethod().DeclaringType).GetTypes() для получения всех тиипов в проекте
+            </summary>
+            <param name="namespace">пространстj имен</param>
+            <param name="types">список типов 
+            рекомедую использовать Assembly.GetAssembly(MethodBase.GetCurrentMethod().DeclaringType).GetTypes() для получения всех тиипов в проекте</param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSoursing.EventConverter`1">
+            <summary>
+            Класс для преоброзования ReadStreamResult (класс в виде которого предсатвлен результат из Esdb)
+            в List IEvent  (список классов Событиеов)
+            </summary>
+        </member>
+        <member name="M:EventSoursing.EventConverter`1.ConverterStreamResultToListEvent(System.Collections.Generic.IAsyncEnumerable{EventSoursing.Events.IEventJson})">
+            <summary>
+            Метод для преоброзования ReadStreamResult (класс в виде которого предсатвлен результат из Esdb)
+            в List IEvent (список классов Событиеов)
+            </summary>
+            <param name="evnts">ReadStreamResult (класс в виде которого предсатвлен результат из Esdb)</param>
+            <returns>List IEvent  (список классов Событиеов)</returns>
+        </member>
+        <member name="M:EventSoursing.EventConverter`1.ConverterStreamResultToListEvent(System.Collections.Generic.IEnumerable{EventSoursing.Events.IEventJson})">
+            <summary>
+            Метод для преоброзования ReadStreamResult (класс в виде которого предсатвлен результат из Esdb)
+            в List IEvent (список классов Событиеов)
+            </summary>
+            <param name="evnts">ReadStreamResult (класс в виде которого предсатвлен результат из Esdb)</param>
+            <returns>List IEvent  (список классов Событиеов)</returns>
+        </member>
+        <member name="M:EventSoursing.EventConverter`1.ConverterResolvedEventToEvent(EventSoursing.Events.IEventJson)">
+            <summary>
+            для преоброзования ResolvedEvent (класс в виде которого предсатвлен один Событие в Esdb)
+            в IEvent (класс Событиеа)
+            </summary>
+            <param name="evnt">ResolvedEvent (класс в виде которого предсатвлен один Событие в Esdb)</param>
+            <returns>IEvent (класс Событиеа)</returns>
+        </member>
+        <member name="T:EventSoursing.EventConverterExtensions">
+            <summary>
+            Класс для преоброзования ReadStreamResult (класс в виде которого предсатвлен результат из Esdb)
+            в List IEvent  (список классов Событиеов)
+            </summary>
+        </member>
+        <member name="M:EventSoursing.EventConverterExtensions.ConverterResolvedEventToEvent``2(EventSoursing.Events.IEventJson)">
+            <summary>
+            Метод для преоброзования ResolvedEvent (класс в виде которого предсатвлен один Событие в Esdb)
+            в T (класс Событиеа)
+            </summary>
+            <param name="evnt">ResolvedEvent (класс в виде которого предсатвлен один Событие в Esdb)</param>
+            <returns>T (класс Событиеа)</returns>
+        </member>
+        <member name="M:EventSoursing.EventConverterExtensions.ConverterResolvedEventToEvent``1(EventSoursing.Events.IEventJson,System.Type)">
+            <summary>
+            Метод для преоброзования ResolvedEvent (класс в виде которого предсатвлен один Событие в Esdb)
+            в T (класс Событиеа)
+            </summary>
+            <param name="evnt">ResolvedEvent (класс в виде которого предсатвлен один Событие в Esdb)</param>
+            <param name="type">Тип Событиеа</param>
+            <returns>Класс Событиеа</returns>
+        </member>
+        <member name="M:EventSoursing.EventConverterExtensions.OrderByEffectiveDate``1(System.Collections.Generic.IEnumerable{EventSoursing.Events.IEvent{``0}})">
+            <summary>
+            Сортировка по Effective date
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.EventConverterExtensions.OrderByEffectiveDate``1(System.Collections.Generic.IEnumerable{System.ValueTuple{EventSoursing.Events.IEvent{``0},System.UInt64}})">
+            <summary>
+            Сортировка по Effective date
+            </summary>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSoursing.Events.CancelEvents.CancelEventsV1`1">
+            <summary>
+            Событие аннулирования
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.CancelEvents.CancelEventsV1`1.CanceledEventsIds">
+            <summary>
+            Идентификаторы аннулируемых событий
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.CancelEvents.CancelEventsV1`1.CanceledEventParentId">
+            <summary>
+            Идентификатор Событиеа Родителя
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Events.CancelEvents.CancelEventsV1`1.#ctor">
+            <summary>
+            Конструктор класса
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Events.CancelEvents.CancelEventsV1`1.#ctor(System.Guid,`0,System.Guid[],System.Guid)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="eventId">Идентификатор</param>
+            <param name="metadata">Методанные</param>
+            <param name="canceledEventsIds">Идентификаторы аннулируемых событий</param>
+            <param name="canceledEventParentId">Идентификатор Событиеа Родителя</param>
+        </member>
+        <member name="T:EventSoursing.Events.Event`1">
+            <summary>
+            Абстрактный класс с методами общими для всех событий
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.Event`1.EventId">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSoursing.Events.Event`1.Metadata">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSoursing.Events.Event`1.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Events.Event`1.AddMetadata(EventSoursing.Events.IEventJson)">
+            <summary>
+            Десериализация метаданных из Json
+            </summary>
+            <param name="evnt">Событие в json</param>
+        </member>
+        <member name="M:EventSoursing.Events.Event`1.AddMetadata(System.Byte[],System.UInt64,System.DateTime)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSoursing.Events.Event`1.AddMetadata(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSoursing.Events.Event`1.JsonSerializeData">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSoursing.Events.Event`1.JsonSerializeDataToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSoursing.Events.Event`1.JsonSerializeMetadata">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSoursing.Events.Event`1.#ctor(System.Guid,`0)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="eventId">Идентификатор события</param>
+            <param name="metadata">Методанные</param>
+        </member>
+        <member name="T:EventSoursing.Events.EventMetadata">
+            <summary>
+            Класс с методанными
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Events.EventMetadata.#ctor(System.Int32,System.DateTime,System.Guid,System.Int32)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="aggregateId">Id Аггрегата</param>
+            <param name="effectiveDate">Дата вступления в силу</param>
+            <param name="parentEventId">Идентификатор Событиеа Родителя</param>
+            <param name="workerChangeBy">Идентификатор работника</param>
+        </member>
+        <member name="M:EventSoursing.Events.EventMetadata.#ctor(System.Guid,System.Int32,System.DateTime,System.DateTime,System.String,System.Guid,System.Int32)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="eventId">идентификатор</param>
+            <param name="aggregateId">Id Аггрегата</param>
+            <param name="changeDate">Втупление в силу</param>
+            <param name="effectiveDate">Дата вступления в силу</param>
+            <param name="eventTypeName">Название типа</param>
+            <param name="parentEventId">Идентификатор Событиеа Родителя</param>
+            <param name="workerChangeBy">Идентификатор работника</param>
+        </member>
+        <member name="M:EventSoursing.Events.EventMetadata.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.EventMetadata.EventId">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSoursing.Events.EventMetadata.AggregateId">
+            <inheritdoc />
+        </member>
+        <member name="P:EventSoursing.Events.EventMetadata.Position">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSoursing.Events.EventMetadata.ChangeDate">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSoursing.Events.EventMetadata.EffectiveDate">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSoursing.Events.EventMetadata.EventTypeName">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSoursing.Events.EventMetadata.ParentEventId">
+            <inheritdoc/>
+        </member>
+        <member name="P:EventSoursing.Events.EventMetadata.WorkerChangeBy">
+            <inheritdoc/>
+        </member>
+        <member name="M:EventSoursing.Events.EventMetadata.Clone">
+            <summary>
+            Клоннирование
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:EventSoursing.Events.ICloneMetadata`1">
+            <summary>
+            Итерфейс для Методанных
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Events.ICloneMetadata`1.Clone">
+            <summary>
+            Клоннирование
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:EventSoursing.Events.IEvent`1">
+            <summary>
+            Интерфейс для события
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEvent`1.EventId">
+            <summary>
+            ID события
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEvent`1.Metadata">
+            <summary>
+            Метаданные события
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Events.IEvent`1.JsonSerializeData">
+            <summary>
+            Сериализация Данных (полей этого класса) в Json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Events.IEvent`1.JsonSerializeDataToString">
+            <summary>
+            Сериализация Данных (полей этого класса) в Json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Events.IEvent`1.JsonSerializeMetadata">
+            <summary>
+            Сериализация методанных в Json
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Events.IEvent`1.AddMetadata(System.Byte[],System.UInt64,System.DateTime)">
+            <summary>
+            Десериализация метаданных из Json
+            </summary>
+            <param name="metadata">Набор байтов</param>
+            <param name="position">Позиция</param>
+            <param name="changeDate">Дата изменения</param>
+        </member>
+        <member name="M:EventSoursing.Events.IEvent`1.AddMetadata(EventSoursing.Events.IEventJson)">
+            <summary>
+            Десериализация метаданных из Json
+            </summary>
+            <param name="evnt">событие</param>
+        </member>
+        <member name="M:EventSoursing.Events.IEvent`1.AddMetadata(`0)">
+            <summary>
+            Добавление класса методанных с содержимым
+            </summary>
+            <param name="metadata"></param>
+        </member>
+        <member name="T:EventSoursing.Events.IEventJson">
+            <summary>
+            Событие в Json
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventJson.EventId">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventJson.Data">
+            <summary>
+            Данные
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventJson.Metadata">
+            <summary>
+            Метаданные
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventJson.Position">
+            <summary>
+            Позицыя
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventJson.CreatedTime">
+            <summary>
+            Время создания
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventJson.EventType">
+            <summary>
+            Тип события
+            </summary>
+        </member>
+        <member name="T:EventSoursing.Events.IEventMetadata">
+            <summary>
+            Итерфейс для Методанных
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventMetadata.EventId">
+            <summary>
+            Id события
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventMetadata.EffectiveDate">
+            <summary>
+            Дата вступления в силу
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventMetadata.Position">
+            <summary>
+            Позиция в основном потоке
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventMetadata.EventTypeName">
+            <summary>
+            Название Событиеа
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventMetadata.ParentEventId">
+            <summary>
+            Идентификатор Событиеа Родителя
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventMetadata.AggregateId">
+            <summary>
+            Id Аггрегата
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventMetadata.ChangeDate">
+            <summary>
+            Дата Сохранения
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Events.IEventMetadata.WorkerChangeBy">
+            <summary>
+            Идентификатор того кто изменил
+            </summary>
+        </member>
+        <member name="T:EventSoursing.Exeptions.EventParseException">
+            <summary>
+            Ошибка при получении события
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Exeptions.EventParseException.#ctor(System.Type)">
+            <summary>
+            Ошибка при получении события
+            </summary>
+            <param name="type">Тип события</param>
+        </member>
+        <member name="M:EventSoursing.Exeptions.EventParseException.#ctor(System.String)">
+            <summary>
+            Ошибка при получении события
+            </summary>
+            <param name="type">Тип события</param>
+        </member>
+        <member name="M:EventSoursing.Exeptions.EventParseException.ToMessage(System.Type)">
+            <summary>
+            Генерирование сообщения
+            </summary>
+            <param name="type">Тип события</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Exeptions.EventParseException.ToMessage(System.String)">
+            <summary>
+            Генерирование сообщения
+            </summary>
+            <param name="type">Тип события</param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSoursing.Exeptions.NotActualException">
+            <summary>
+            Ошибка Не удалось получить актуальные данные
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Exeptions.NotActualException.#ctor">
+            <summary>
+            Ошибка Не удалось получить актуальные данные
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Exeptions.NotActualException.#ctor(System.Exception)">
+            <summary>
+            Ошибка Не удалось получить актуальные данные
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Exeptions.NotActualException.ToMessage">
+            <summary>
+            Генерирование сообщения
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:EventSoursing.Exeptions.NumberAttemptsExceededException">
+            <summary>
+            Ошибка при получении события повторилась более 5 раз
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Exeptions.NumberAttemptsExceededException.Iterations">
+            <summary>
+            Количество попыток
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Exeptions.NumberAttemptsExceededException.#ctor(System.Exception,System.UInt64,System.String)">
+            <summary>
+            Ошибка при записи события
+            </summary>
+            <param name="ex">Ошибка</param>
+            <param name="position">Позиция в потоке</param>
+            <param name="streamName">Имя потока</param>
+        </member>
+        <member name="M:EventSoursing.Exeptions.NumberAttemptsExceededException.ToMessage(System.Exception,System.UInt64,System.String)">
+            <summary>
+            Генерирование сообщения
+            </summary>
+            <param name="ex">Ошибка</param>
+            <param name="position">Позиция в потоке</param>
+            <param name="streamName">Имя потока</param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSoursing.JsonSetting">
+            <summary>
+            Класс с настройками Json сериализации
+            </summary>
+        </member>
+        <member name="P:EventSoursing.JsonSetting.NameCaseInsensitiveIncludeFields">
+            <summary>
+            Настройки сериализации: 
+            Учет Регистра, 
+            Вчлючение полей
+            </summary>
+        </member>
+        <member name="P:EventSoursing.JsonSetting.NameCaseInsensitive">
+            <summary>
+            Настройки сериализации: 
+            Учет Регистра
+            </summary>
+        </member>
+        <member name="P:EventSoursing.JsonSetting.WriteIndented">
+            <summary>
+            Настройки сериализации: 
+            Добавление лишних пробелов
+            </summary>
+        </member>
+        <member name="T:EventSoursing.Producer.ESProducer`1">
+            <summary>
+            Класс для даписи в EventStoreDB
+            </summary>
+        </member>
+        <member name="F:EventSoursing.Producer.ESProducer`1._changes">
+            <summary>
+            Список изменений
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Producer.ESProducer`1.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Producer.ESProducer`1.IsChange">
+            <summary>
+            возвращает true если есть не сохраненные изменения
+            false во всех остальных случаях
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Producer.ESProducer`1.Apply(EventSoursing.Events.IEvent{`0})">
+            <summary>
+            Добавление Изменений
+            </summary>
+            <param name="evt"></param>
+        </member>
+        <member name="M:EventSoursing.Producer.ESProducer`1.Save(System.Threading.CancellationToken)">
+            <summary>
+            Сохранение изменений
+            </summary>
+            <param name="cancellationToken">Токен отмены</param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSoursing.Producer.IESProducer`1">
+            <summary>
+            Класс для даписи в EventStoreDB
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Producer.IESProducer`1.IsChange">
+            <summary>
+            возвращает true если есть не сохраненные изменения
+            false во всех остальных случаях
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Producer.IESProducer`1.Save(System.Threading.CancellationToken)">
+            <summary>
+            Сохранение изменений
+            </summary>
+            <param name="cancellationToken">Токен отмены</param>
+            <returns></returns>
+        </member>
+        <member name="T:EventSoursing.Reader.ESDirection">
+            <summary>
+            Перечесление режимов чтения
+            </summary>
+        </member>
+        <member name="F:EventSoursing.Reader.ESDirection.Backwards">
+            <summary>
+            Чтение с конца
+            </summary>
+        </member>
+        <member name="F:EventSoursing.Reader.ESDirection.Forwards">
+            <summary>
+            Чтение с начала
+            </summary>
+        </member>
+        <member name="T:EventSoursing.Reader.IESReader`1">
+            <summary>
+            Класс для чтения из EventStoreDB
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Reader.IESReader`1.ReadEventByStream(EventSoursing.Reader.ESDirection,System.UInt64,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Чтение из EventStoreDB
+            </summary>
+            <param name="direction">Направление чтения</param>
+            <param name="position">Позиция с которой начинать чтение</param>
+            <param name="cancellationToken">Токен отмены</param>
+            <param name="withCancelEvents">С применением аннулирования или нет</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Reader.IESReader`1.ReadEventWithCancelEventNameByStream(EventSoursing.Reader.ESDirection,System.Nullable{System.UInt64},System.Threading.CancellationToken)">
+            <summary>
+            Чтение из EventStoreDB
+            </summary>
+            <param name="direction">Направление чтения</param>
+            <param name="position">Позиция с которой начинать чтение</param>
+            <param name="cancellationToken">Токен отмены</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Reader.IESReader`1.GetLastEventPositionAsync(System.Threading.CancellationToken)">
+            <summary>
+            Чтение из EventStoreDB
+            </summary>
+            <param name="cancellationToken">Токен отмены</param>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Reader.IESReader`1.CheckStreamAsync">
+            <summary>
+            Проверка на наличее потока
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:EventSoursing.Subscriber.IESSubscriber">
+            <summary>
+            Класс для слушателя(подписчика на поток) в EventStoreDB Который записывает в бд информацию
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Subscriber.IESSubscriber.StreamId">
+            <summary>
+            Идентификатор потока
+            </summary>
+        </member>
+        <member name="P:EventSoursing.Subscriber.IESSubscriber.StreamName">
+            <summary>
+            Имя потока
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Subscriber.IESSubscriber.SyncWaiting(System.Int32,System.Boolean)">
+            <summary>
+            метод ожидания синхронизации потока стора и целевой рид модели (true - все ок / false - подписчик лежит)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Subscriber.IESSubscriber.IsActualStateAsync">
+            <summary>
+            обертка на проверку акульного состояния актульной модели данных на актульность
+            (проверяет актуальность данных в posgre, при необходимости дочитывает события из стора)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EventSoursing.Subscriber.IESSubscriber.SubscribeStartAction">
+            <summary>
+            Функция запускаемая при старте подписки
+            </summary>
+        </member>
+        <member name="M:EventSoursing.Subscriber.IESSubscriber.SubscribeStreamAsync">
+            <summary>
+            метод подписки на получение Событиеов из EventStoreDB (по 1 потоку)
+            </summary>
+        </member>
+    </members>
+</doc>

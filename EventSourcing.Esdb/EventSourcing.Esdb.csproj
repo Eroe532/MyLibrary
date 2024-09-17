@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>EventSourcing.Esdb.xml</DocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Title>EventSourcing.Esdb</Title>
+    <Version>2.2.3</Version>
+    <Authors>CaT</Authors>
+    <Company>CaT</Company>
+    <Product>CaTNugets</Product>
+    <Description>Библиотека для использования патерна Event Sourcing</Description>
+    <PackageId>EventSourcing.Esdb</PackageId>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="CaTConfiguration" Version="1.0.1" />
+    <PackageReference Include="EventSourcing" Version="2.2.1" />
+    <PackageReference Include="EventStore.Client.Grpc" Version="23.2.1" />
+    <PackageReference Include="EventStore.Client.Grpc.ProjectionManagement" Version="23.2.1" />
+    <PackageReference Include="EventStore.Client.Grpc.Streams" Version="23.2.1" />
+  </ItemGroup>
+
+</Project>

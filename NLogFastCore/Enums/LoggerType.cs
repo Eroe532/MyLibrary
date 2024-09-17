@@ -1,7 +1,7 @@
 ﻿namespace NLogFastCore.Enums
 {
     /// <summary>
-    /// Тип логера
+    /// Тип логгера
     /// </summary>
     public enum LoggerType
     {
@@ -10,6 +10,6 @@
         /// <summary>
         /// Логгер ошибок
         /// </summary>
-        ErrorLogger = 1
+        ErrorLogger = 1,
     }
 }

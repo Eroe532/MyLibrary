@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FileStorage.Dtos</name>
+    </assembly>
+    <members>
+        <member name="T:FileStorage.Dtos.FileDto">
+            <summary>
+            Файл
+            </summary>
+        </member>
+        <member name="P:FileStorage.Dtos.FileDto.Id">
+            <summary>
+            Идентификатор
+            </summary>
+        </member>
+        <member name="P:FileStorage.Dtos.FileDto.FileName">
+            <summary>
+            Название (*.*)
+            </summary>
+        </member>
+        <member name="M:FileStorage.Dtos.FileDto.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+        <member name="T:FileStorage.Dtos.FileFullDto">
+            <summary>
+            Файл полная информация
+            </summary>
+        </member>
+        <member name="P:FileStorage.Dtos.FileFullDto.DigitalBytes">
+            <summary>
+            Файл
+            </summary>
+        </member>
+        <member name="P:FileStorage.Dtos.FileFullDto.ContentType">
+            <summary>
+            Content Type
+            </summary>
+        </member>
+        <member name="M:FileStorage.Dtos.FileFullDto.#ctor">
+            <summary>
+            Файл полная информация
+            </summary>
+        </member>
+        <member name="M:FileStorage.Dtos.FileFullDto.#ctor(System.Guid,System.String,System.Byte[])">
+            <summary>
+            Файл полная информация
+            </summary>
+            <param name="id">Идетификатор</param>
+            <param name="fileName">Название (*.*)</param>
+            <param name="digitalBytes">Файл</param>
+        </member>
+        <member name="M:FileStorage.Dtos.FileFullDto.SetContentType(System.String)">
+            <summary>
+            Получить Content Type
+            </summary>
+            <param name="reportFileType">Возможные форматы для файлов отчета</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:FileStorage.Dtos.FileFullDto.GetContentType(System.String)">
+            <summary>
+            Получить Content Type
+            </summary>
+            <param name="reportFileType">Возможные форматы для файлов отчета</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:FileStorage.Dtos.FileSetDto">
+            <summary>
+            Файл
+            </summary>
+        </member>
+        <member name="P:FileStorage.Dtos.FileSetDto.FileName">
+            <summary>
+            Название (*.*)
+            </summary>
+        </member>
+        <member name="P:FileStorage.Dtos.FileSetDto.DigitalBytes">
+            <summary>
+            Файл
+            </summary>
+        </member>
+        <member name="M:FileStorage.Dtos.FileSetDto.#ctor">
+            <summary>
+            Конструктор
+            </summary>
+        </member>
+    </members>
+</doc>

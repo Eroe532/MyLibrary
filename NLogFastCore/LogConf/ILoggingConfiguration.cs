@@ -1,7 +1,7 @@
 ﻿using NLog;
 using NLog.Config;
 
-using NLogFastCore.Enums;
+using NLogFastCore.Builders.Targets;
 
 namespace NLogFastCore.LogConf
 {
@@ -11,12 +11,15 @@ namespace NLogFastCore.LogConf
     public interface ILoggingConfiguration
     {
         /// <summary>
+        /// Target-Конструктор
+        /// </summary>
+        public ITargetBuilder TargetBuilder { get; set; }
+
+        /// <summary>
         /// Выполнение настроек логирования
         /// </summary>
         /// <param name="setupBuilder"></param>
-        /// <param name="connectionString"> Строка подключения к базе данных </param>
-        /// <param name="dbProviderType"> Тип провайдера работы с базой данных </param>
-        ISetupBuilder Setup(ISetupBuilder setupBuilder, string connectionString, DbProviderType dbProviderType);
+        ISetupBuilder Setup(ISetupBuilder setupBuilder);
 
         /// <summary>
         /// Установка уровней логупрования

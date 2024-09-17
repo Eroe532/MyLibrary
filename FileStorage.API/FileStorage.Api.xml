@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FileStorage.Api</name>
+    </assembly>
+    <members>
+        <member name="T:FileStorage.Api.BLL.FileLogic`1">
+            <summary>
+            Логика файлового хранилища
+            </summary>
+            <typeparam name="TContext">Контекст</typeparam>
+        </member>
+        <member name="F:FileStorage.Api.BLL.FileLogic`1._repositoryFactory">
+            <summary>
+            Фабрика репозиториев
+            </summary>
+        </member>
+        <member name="F:FileStorage.Api.BLL.FileLogic`1._maximumFileSize">
+            <summary>
+            Максимальная величина файла
+            </summary>
+        </member>
+        <member name="F:FileStorage.Api.BLL.FileLogic`1._logger">
+            <summary>
+            Логгер
+            </summary>
+        </member>
+        <member name="M:FileStorage.Api.BLL.FileLogic`1.#ctor(CaTRepository.Factory.IRepositoryFactory,FileStorage.Api.MaximumFileSize,Microsoft.Extensions.Logging.ILogger{FileStorage.Api.BLL.FileLogic{`0}})">
+            <summary>
+            Логика файлового хранилища
+            </summary>
+            <param name="repositoryFactory">Фабрика репозиториев</param>
+            <param name="maximumFileSize">Максимальная величина файла</param>
+            <param name="logger">Логгер</param>
+        </member>
+        <member name="M:FileStorage.Api.BLL.FileLogic`1.Get(System.Guid)">
+            <summary>
+            Получение одного объекта по ключу
+            </summary>
+            <param name="id">Идентификатор</param>
+            <returns>Один объект или пусто если нет объекта с таким ключом</returns>
+        </member>
+        <member name="M:FileStorage.Api.BLL.FileLogic`1.GetList(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Получение одного объекта по ключу
+            </summary>
+            <param name="ids">Коллекция идентификаторов</param>
+            <returns>Один объект или пусто если нет объекта с таким ключом</returns>
+        </member>
+        <member name="M:FileStorage.Api.BLL.FileLogic`1.GetFull(System.Guid)">
+            <summary>
+            Получение одного объекта по ключу
+            </summary>
+            <param name="id">Идентификатор</param>
+            <returns>Один объект или пусто если нет объекта с таким ключом</returns>
+        </member>
+        <member name="M:FileStorage.Api.BLL.FileLogic`1.GetFullList(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            Получение одного объекта по ключу
+            </summary>
+            <param name="ids">Коллекция идентификаторов</param>
+            <returns>Один объект или пусто если нет объекта с таким ключом</returns>
+        </member>
+        <member name="M:FileStorage.Api.BLL.FileLogic`1.ToFileDto(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Создание объекта
+            </summary>
+            <param name="file">FormFile</param>
+        </member>
+        <member name="M:FileStorage.Api.BLL.FileLogic`1.Create(FileStorage.Dtos.FileSetDto)">
+            <summary>
+            Создание объекта
+            </summary>
+            <param name="dto">ДТО</param>
+        </member>
+        <member name="T:FileStorage.Api.Controllers.FileController`1">
+            <summary>
+            Контроллер
+            </summary>
+        </member>
+        <member name="F:FileStorage.Api.Controllers.FileController`1._logic">
+            <summary>
+            Репозиторий файла
+            </summary>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.FileController`1.#ctor(FileStorage.Api.BLL.FileLogic{`0})">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="logic">Логика</param>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.FileController`1.Get(System.Guid)">
+            <summary>
+            Вывести файл по идентификатору
+            </summary>
+            <param name="id">Идентификатор</param>
+            <returns></returns>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.FileController`1.GetFull(System.Guid)">
+            <summary>
+            Вывести файл по идентификатору
+            </summary>
+            <param name="id">Идентификатор</param>
+            <returns></returns>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.FileController`1.Add(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Добавление файла файла во внутреннее хранилище
+            </summary>
+            <param name="file">Документ</param>
+            <returns></returns>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.FileController`1.Add(FileStorage.Dtos.FileSetDto)">
+            <summary>
+            Добавление файла файла во внутреннее хранилище
+            </summary>
+            <param name="documentDto">Документ</param>
+            <returns></returns>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.FileController`1.GetFile(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.FileController`1.GetFullFile(System.Guid)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.FileController`1.AddFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <inheritdoc/>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.FileController`1.AddFile(FileStorage.Dtos.FileSetDto)">
+            <inheritdoc/>
+        </member>
+        <member name="T:FileStorage.Api.Controllers.IFileController">
+            <summary>
+            Контроллер
+            </summary>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.IFileController.GetFile(System.Guid)">
+            <summary>
+            Вывести файл по идентификатору
+            </summary>
+            <param name="id">Идентификатор</param>
+            <returns></returns>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.IFileController.GetFullFile(System.Guid)">
+            <summary>
+            Вывести файл по идентификатору
+            </summary>
+            <param name="id">Идентификатор</param>
+            <returns></returns>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.IFileController.AddFile(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Добавление файла файла во внутреннее хранилище
+            </summary>
+            <param name="file">Документ</param>
+            <returns></returns>
+        </member>
+        <member name="M:FileStorage.Api.Controllers.IFileController.AddFile(FileStorage.Dtos.FileSetDto)">
+            <summary>
+            Добавление файла файла во внутреннее хранилище
+            </summary>
+            <param name="documentDto">Документ</param>
+            <returns></returns>
+        </member>
+        <member name="T:FileStorage.Api.FileStorageExeption">
+            <summary>
+            Методы расширения для отображения данных о превышении максимума файла
+            </summary>
+        </member>
+        <member name="M:FileStorage.Api.FileStorageExeption.GetSizeInBytesDescription(System.Int64)">
+            <summary>
+            Вывод максимального размера файла в понятном виде
+            </summary>
+            <param name="value">Величина</param>
+            <returns></returns>
+        </member>
+        <member name="M:FileStorage.Api.FileStorageExeption.AddFileStorage``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Зарегистрировать файловое хранилище
+            </summary>
+            <typeparam name="TContext"></typeparam>
+            <param name="services">IServiceCollection</param>
+            <param name="connectionString">Строка подключения</param>
+            <param name="configuration">IConfiguration</param>
+            <returns></returns>
+        </member>
+        <member name="M:FileStorage.Api.FileStorageExeption.AddFileStorage(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Зарегистрировать файловое хранилище
+            </summary>
+            <param name="services">IServiceCollection</param>
+            <param name="connectionString">Строка подключения</param>
+            <param name="configuration">IConfiguration</param>
+            <returns></returns>
+        </member>
+        <member name="T:FileStorage.Api.MaximumFileSize">
+            <summary>
+            Максимальый размер файла
+            </summary>
+        </member>
+        <member name="P:FileStorage.Api.MaximumFileSize.Value">
+            <summary>
+            Максимальый размер файла
+            </summary>
+        </member>
+        <member name="M:FileStorage.Api.MaximumFileSize.#ctor(System.Int64)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="value">Максимальый размер файла</param>
+        </member>
+    </members>
+</doc>

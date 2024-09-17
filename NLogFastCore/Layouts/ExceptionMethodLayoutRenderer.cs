@@ -8,7 +8,7 @@ namespace NLogFastCore.Layouts
     /// <summary>
     /// Название метода или сигнатура
     /// </summary>
-    [LayoutRenderer("Exception-method")]
+    [LayoutRenderer("Exception-Method")]
     internal class ExceptionMethodLayoutRenderer : LayoutRenderer
     {
         /// <summary>

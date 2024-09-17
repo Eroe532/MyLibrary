@@ -1,21 +1,20 @@
-﻿namespace DictionaryManagment.Model
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace DictionaryManagment.Model;
+
+/// <summary>
+/// Интерфейс для модели с полем ключа
+/// </summary>
+/// <typeparam name="TKey">Тип ключа</typeparam>
+public interface IDictionaryModel<TKey> where TKey : struct
 {
     /// <summary>
-    /// Интерфей для модели с полем ключа
+    /// Идентификатор
     /// </summary>
-    /// <typeparam name="U">Тип ключа</typeparam>
-    public interface IDictionaryModel<U> where U : struct
-    {
-        /// <summary>
-        /// Ключ
-        /// </summary>
-        public U Id { get; set; }
+    public TKey Id { get; set; }
 
-        /// <summary>
-        /// Ключ
-        /// </summary>
-        public string Title { get; set; }
-    }
+    /// <summary>
+    /// Название
+    /// </summary>
+    public string Title { get; set; }
 }
-
-
